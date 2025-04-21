@@ -18,6 +18,6 @@ import com.nezztech.apuesta.websocket.model.entity.UsuarioInterno;
  */
 public interface UsuarioInternoRepository  extends JpaRepository<UsuarioInterno, Integer> {
 	 
-	 Optional<UsuarioInterno> findByCorreo(String email);		 
+	 Optional<UsuarioInterno> findByCorreoUsuario(String email);		 
   
 }

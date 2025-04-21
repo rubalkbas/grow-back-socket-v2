@@ -1,6 +1,7 @@
 package com.nezztech.apuesta.websocket.model.entity;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -10,19 +11,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @author NEZZTECH
- * @version 1.0
- * @since 2024
- *
+ * ENTITY
+ * 
+ * @author 
+ * 
  */
+@Entity
+@Table(name="apuesta_cliente", schema="internanueva")
 @Getter
 @Setter
-@Entity
-@Table(name = "apuesta_cliente", schema = "interna")
 public class ApuestaClienteEntity implements Serializable {
 
 	/** serial */
@@ -31,7 +34,7 @@ public class ApuestaClienteEntity implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_apuesta_cliente")
-	private Integer idApuestaCliente;	
+	private Long idApuestaCliente;	
 	
 	@Column(name = "tipo_compra")
 	private String tipoCompra;
@@ -61,12 +64,14 @@ public class ApuestaClienteEntity implements Serializable {
 	private String estatusCompra;	
 	
 	@Column(name = "fecha_creacion")
-	private Date fechaCreacion;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime fechaCreacion;
 	
 	@Column(name = "fecha_cierre")
-	private Date fechaCierre;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime fechaCierre;
 	
 	@Column(name = "id_usuario")
-	private Integer idUsuario;
+	private Long idUsuario;
 
 }

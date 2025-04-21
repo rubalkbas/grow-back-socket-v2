@@ -6,6 +6,7 @@ package com.nezztech.apuesta.websocket.model.entity;
 import java.util.Date;
 import java.util.List;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -18,63 +19,53 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 /**
- * @author NEZZTECH
- * @version 1.0
- * @since 2024
- *
+ * ENTITY
+ * 
+ * @author 
+ * 
  */
 @Entity
-@Table(name="usuarios", schema="interna")
+@Table(name="usuarios", schema="internanueva")
 @Getter
 @Setter
-@ToString
 public class UsuarioInterno implements Serializable {
 
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 4039673533547242096L;
-
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_usuario")
-	private Integer idUsuario;
+	private Long idUsuario;
+	
+	@Column(name = "nombre_usuario")
+    private String nombreUsuario;
 
-	@Column(name = "alias")
-	private String alias;
+    @Column(name = "ape_pat_usuario")
+    private String apellidoPaterno;
+
+    @Column(name = "ape_mat_usuario")
+    private String apellidoMaterno;
 	
-	@Column(name = "nombre")
-	private String nombre;
-	
-	@Column(name = "correo")
-	private String correo;
-	
-	@Column(name = "pass")
-	private String pass;
-	
-	@Column(name = "tipo")
-	private String tipo;
-	
-	@Column(name = "rol")
-	private String rol;
-	
-	@ManyToOne
-	@JoinColumn(name="id_rol")
-	private RolEntity idRol;
+    @Column(name = "correo_usuario")
+    private String correoUsuario;
+
+    @Column(name = "contrasenia" )
+    private String contrasenia;
 	
 	@Column(name = "estatus")
-	private int estatus;
+	private Integer estatus;	
 	
-	@Column(name = "fecha_creacion")
-	private Date fecha;	
-	
+	@Column(name = "fecha_creacion", insertable = false, updatable = false)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime fechaCreacion;	
+
 	@Column(name = "total_dinero")
 	private Double totalDinero;
 	
@@ -85,8 +76,13 @@ public class UsuarioInterno implements Serializable {
 	private Double margen;
 	
 	@Column(name = "id_admin")
-	private Integer idAdmin;
+	private Long idAdmin;
 	
-	public UsuarioInterno() {}
+	@Column(name = "recuperacion")
+	private Integer recuperacion;
 	
+	@ManyToOne
+    @JoinColumn(name = "id_rol", nullable = false)
+    private RolEntity rol;
+
 }

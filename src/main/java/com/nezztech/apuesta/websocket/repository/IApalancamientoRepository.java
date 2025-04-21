@@ -9,6 +9,6 @@ import com.nezztech.apuesta.websocket.model.entity.Apalancamiento;
 
 public interface IApalancamientoRepository extends JpaRepository<Apalancamiento, Long> {
 	
-	List<Apalancamiento> findByIdUsuario(Integer idUsuario ); 
+	List<Apalancamiento> findByIdUsuario(Long idUsuario ); 
 
 }

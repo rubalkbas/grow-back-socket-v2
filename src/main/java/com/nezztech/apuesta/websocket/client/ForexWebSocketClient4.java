@@ -76,7 +76,9 @@ public class ForexWebSocketClient4 extends WebSocketClient {
 		this.usuarioRepository = usuarioRepository;
 		this.historyRepository = historyRepository;
 		
-		this.listaApalan = iApalancamientoRepository.findByIdUsuario(999999);
+		Long idUser = Long.valueOf("999999");
+		
+		this.listaApalan = iApalancamientoRepository.findByIdUsuario(idUser);
 		
 	}
 	
@@ -217,7 +219,7 @@ public class ForexWebSocketClient4 extends WebSocketClient {
 					Double apuesta = datos.getMontoApuesta();
 					Double valorActivo = datos.getValorUnidad();
 					String compra2 = datos.getCompra();
-					Integer idUsuario = datos.getIdUsuario();
+					Long idUsuario = datos.getIdUsuario();
 					////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 					// log.info(message);
 					////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -563,7 +565,7 @@ public class ForexWebSocketClient4 extends WebSocketClient {
 					//if(validaMargenLibre(apuestaClienteEntity)) {
 						
 						// GUARDA HISTORICO
-						historicoApuestaClienteEntity.setIdApuestaCliente(Integer.valueOf(apuestaClienteEntity.getIdApuestaCliente()));
+						historicoApuestaClienteEntity.setIdApuestaCliente(apuestaClienteEntity.getIdApuestaCliente());
 						historicoApuestaClienteEntity.setValorCompra(valorCompraApuesta);
 						
 						

@@ -19,7 +19,7 @@ public class HistoryRepository {
 	@Autowired
 	public EntityManager entityManager;	
 
-	private static final String SQL_USUARIO_ACTUALIZA_CONSTRASENA = "UPDATE interna.historico_apuesta_cliente \r\n"
+	private static final String SQL_USUARIO_ACTUALIZA_CONSTRASENA = "UPDATE internanueva.historico_apuesta_cliente \r\n"
 			+ "			SET valor_compra = :valorCompra, valor_web_socket = :valorWebSocket, gan_per = :ganPer, monto_gan_per = :montoGanPer\r\n"
 			+ "				WHERE id_hist_apuest_cli = :idHistApuestaCliente";
 	

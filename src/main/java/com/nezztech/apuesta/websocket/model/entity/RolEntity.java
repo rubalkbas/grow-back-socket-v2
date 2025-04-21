@@ -17,38 +17,28 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @author NEZZTECH
- * @version 1.0
- * @since 2024
- *
+ * ENTITY
+ * 
+ * @author 
+ * 
  */
+@Entity
+@Table(name="roles", schema="internanueva")
 @Getter
 @Setter
-@Entity
-@Table(name = "roles", schema = "interna")
-public class RolEntity implements Serializable {
-
-
-	/**
-	 * 
-	 */
+public class RolEntity implements Serializable{
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_rol")
-	private Integer idRol;
-
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_rol")
+	private Long idRol;
+	
 	@Column(name = "nombre_rol")
 	private String nombreRol;
 	
-	@Column(name = "estatus")
-	private int estatus;
-	
-	
-	@Column(name = "fecha_creacion")
-	private LocalDateTime fechaCreacion;
-	
-	@Column(name = "fecha_act")
-	private LocalDateTime fechaAct;
+	@Column(name = "descripcion")
+	private String descripcion;
+
 }

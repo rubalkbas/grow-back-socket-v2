@@ -21,10 +21,10 @@ public class UsuarioRepository {
 	@Autowired
 	public EntityManager entityManager;	
 	
-	//private static final String SQL_USUARIO_ACTUALIZA_CONSTRASENA = "UPDATE interna.usuarios SET margen_libre = :margenLibre WHERE id_usuario = :idUsuario";
+	//private static final String SQL_USUARIO_ACTUALIZA_CONSTRASENA = "UPDATE internanueva.usuarios SET margen_libre = :margenLibre WHERE id_usuario = :idUsuario";
 	
-	private static final String SQL_USUARIO_ACTUALIZA_CONSTRASENA = "UPDATE interna.usuarios \r\n"
-			+ "	SET margen_libre = ( (SELECT  margen_libre FROM interna.usuarios WHERE id_usuario=:idUsuario) + :margenLibre) \r\n"
+	private static final String SQL_USUARIO_ACTUALIZA_CONSTRASENA = "UPDATE internanueva.usuarios \r\n"
+			+ "	SET margen_libre = ( (SELECT  margen_libre FROM internanueva.usuarios WHERE id_usuario=:idUsuario) + :margenLibre) \r\n"
 			+ "		WHERE id_usuario = :idUsuario";
 	
 	@Transactional

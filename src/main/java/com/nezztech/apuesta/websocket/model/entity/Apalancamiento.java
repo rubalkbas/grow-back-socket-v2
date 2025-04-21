@@ -14,15 +14,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @author NEZZTECH
- * @version 1.0
- * @since 2024
- *
+ * ENTITY
+ * 
+ * @author 
+ * 
  */
+@Entity
+@Table(name="apalancamiento", schema="internanueva")
 @Getter
 @Setter
-@Entity
-@Table(name = "apalancamiento", schema = "interna")
 public class Apalancamiento implements Serializable {
 
 
@@ -30,11 +30,11 @@ public class Apalancamiento implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_apalancamiento")
-	private Integer idApalancamiento;
+	private Long idApalancamiento;
 	
 	@Column(name = "simbolo")
 	private String simbolo;
@@ -52,6 +52,6 @@ public class Apalancamiento implements Serializable {
 	private Double apalancamiento2pierde;	
 	
 	@Column(name = "id_usuario")
-	private Integer idUsuario;
+	private Long idUsuario;
 
 }

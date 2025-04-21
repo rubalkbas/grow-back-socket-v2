@@ -22,6 +22,6 @@ public interface IHistoricoApuestaClienteRepository extends JpaRepository< Histo
 	@Query("SELECT SUM(p.montoGanPer) FROM HistoricoApuestaClienteEntity p WHERE  p.idApuestaCliente = :idApuestaCliente")
    	BigDecimal sumaGananciaPerdida(@Param("idApuestaCliente") Integer idApuestaCliente);
 	
-	 Optional<HistoricoApuestaClienteEntity> findByIdApuestaCliente(Integer idApuestaCliente);
+	 Optional<HistoricoApuestaClienteEntity> findByIdApuestaCliente(Long idApuestaCliente);
 
 }
