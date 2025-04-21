@@ -4,10 +4,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.nezztech</groupId>
-	<artifactId>NEZZTECH-APUESTAS</artifactId>
+	<artifactId>grow-back-socket-v2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>NEZZTECH-APUESTAS</name>
-	<description>NEZZTECH APUESTAS</description>
+	<name>grow-back-socket-v2</name>
+	<description>GROW BACK SOCKET 2</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -95,16 +95,8 @@
 			<version>3.9</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		
 
-		<dependency>
-			<groupId>io.jsonwebtoken</groupId>
-			<artifactId>jjwt</artifactId>
-			<version>0.9.1</version>
-		</dependency>
 
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -129,19 +121,30 @@
 			<artifactId>jasypt-spring-boot-starter</artifactId>
 			<version>3.0.4</version>
 		</dependency>
-		
-		
 		<!-- correo -->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
-			    
-	    <dependency>
+		
+		<dependency>
 		    <groupId>org.java-websocket</groupId>
 		    <artifactId>Java-WebSocket</artifactId>
 		    <version>1.5.2</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20210307</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+		
 
 	</dependencies>
 
