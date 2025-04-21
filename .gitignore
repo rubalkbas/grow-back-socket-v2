@@ -1,0 +1,101 @@
+# Directories #
+**/bin/
+/classes/
+target/
+**/classes
+
+
+# OS Files #
+.DS_Store
+
+*.class
+
+# Package Files #
+#*.jar
+*.war
+*.ear
+*.db
+
+######################
+# Windows
+######################
+
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+######################
+# OSX
+######################
+
+.svn
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+######################
+# Eclipse
+######################
+
+*.pydevproject
+.project
+.openapi-generator-ignore
+.metadata
+.factorypath
+/.ibm-web-ext
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.openapi-generator/
+.loadpath
+/src/main/resources/rebel.xml
+
+# External tool builders
+.externalToolBuilders/
+**/.sonar
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+/.apt_generated/
+
+#SyncToy
+*.dat
+*.log
+
+# dependencies
+
+
+logs/
+tmp/
+
+*.gz
+
+
+/.apt_generated_tests/
+/.projectEclipse
+/.projectSts0
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
